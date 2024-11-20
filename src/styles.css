@@ -6,6 +6,9 @@ html {
     padding: 0;
     margin: 0;
 }
+body {
+    background: #fff;
+}
 
 /* below needs to be here (in main stylesheet) to work on innerHTML */
 .scripture .scriptVer {

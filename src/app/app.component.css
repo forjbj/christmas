@@ -1,4 +1,4 @@
-.middle {
+.page {
     width: 100%;
     min-height: 100dvh;
     position: absolute;
@@ -22,11 +22,19 @@
     overflow-x: hidden;
 }
 .heading {
-
+    color: green;
+    display:inline-block;
+    mask:linear-gradient(-60deg,#a00 30%,#a005,#a00 70%) right/300% 100%;
+    background-repeat: no-repeat;
+    animation: shimmer 3s infinite;
+  }
+@keyframes shimmer {
+100% {mask-position:left}
 }
+
 .tree {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     right: 0;
     margin: auto;
