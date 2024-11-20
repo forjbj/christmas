@@ -1,10 +1,10 @@
 {
   "configVersion": 1,
-  "timestamp": 1732083811259,
+  "timestamp": 1732144965139,
   "index": "https://forjbj.github.io/christmas/index.html",
   "assetGroups": [
     {
-      "name": "app",
+      "name": "Xmas",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "cacheQueryOptions": {
@@ -44,15 +44,15 @@
   "dataGroups": [],
   "hashTable": {
     "https://forjbj.github.io/christmas/favicon.ico": "5fba2a3d91314524972e750d1c9ceaa6b254453a",
-    "https://forjbj.github.io/christmas/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
-    "https://forjbj.github.io/christmas/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
-    "https://forjbj.github.io/christmas/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
-    "https://forjbj.github.io/christmas/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
-    "https://forjbj.github.io/christmas/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
-    "https://forjbj.github.io/christmas/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
-    "https://forjbj.github.io/christmas/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
-    "https://forjbj.github.io/christmas/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "https://forjbj.github.io/christmas/index.html": "232a883956dd31e5d70d2f0310361832004c4258",
+    "https://forjbj.github.io/christmas/icons/icon-128x128.png": "472f1ae1965fb3da0d1aa6800f8d5ea6d047ea0f",
+    "https://forjbj.github.io/christmas/icons/icon-144x144.png": "d507a8b275798b5193d95b1a5286de7efada42e5",
+    "https://forjbj.github.io/christmas/icons/icon-152x152.png": "b795510281960cd7434632ed0515bee01f4cace6",
+    "https://forjbj.github.io/christmas/icons/icon-192x192.png": "17df94052b79cce20cfd89ec87f87210accd95d9",
+    "https://forjbj.github.io/christmas/icons/icon-384x384.png": "fecc2ad1c379a5eb6b4a2437ad8ab97541feaab4",
+    "https://forjbj.github.io/christmas/icons/icon-512x512.png": "89eb5722f4f6e6ea37a8debad6763b785c5315df",
+    "https://forjbj.github.io/christmas/icons/icon-72x72.png": "cb8e156705c2df379a48ad33e41cbdf2b75bfb7e",
+    "https://forjbj.github.io/christmas/icons/icon-96x96.png": "c7bed30de0dd1cc4889d0bef89b86822bb00db58",
+    "https://forjbj.github.io/christmas/index.html": "915e7742fc391fd147ef332e31870bd57db097e2",
     "https://forjbj.github.io/christmas/main-PVTW4WME.js": "5ad8490ede1104f97118d4163acdc50e2faca98e",
     "https://forjbj.github.io/christmas/manifest.webmanifest": "12c58b9aacedd6566833cfeeba81b628b80dfac1",
     "https://forjbj.github.io/christmas/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
