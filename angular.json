@@ -91,7 +91,11 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "buildTarget": "christmas:build:production",
+            "baseHref": "https://forjbj.github.io/christmas/"
+          }
         }
       }
     }
