@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+    height: 100dvh;
+    width: 100dvw;
+    padding: 0;
+    margin: 0;
+}
+
+/* below needs to be here (in main stylesheet) to work on innerHTML */
+.scripture .scriptVer {
+    text-align: justify;
+    color: #222;
+}
+.scripture .scriptNum {
+    text-align: right;
+    color: #555;
+}

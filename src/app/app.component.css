@@ -1,0 +1,42 @@
+.middle {
+    width: 100%;
+    min-height: 100dvh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(skyblue 60%, #eee);
+    background-size: cover;
+}
+.countdown {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 3rem;
+    text-align: center;
+    color: black;
+    text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white;
+    min-height: 100dvh;
+    height: fit-content;
+    width: 100%;
+    overflow-x: hidden;
+}
+.heading {
+
+}
+.tree {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 30dvh;
+}
+.scripture {
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    margin: 0 1rem;
+}
+
+/* scripture css in styles.css file as it only works from there for innerHTML*/
