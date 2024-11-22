@@ -9,7 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   time = new Date();
+  // time = new Date("12/25/2024"); //for testing and change in timeDifference function below
+
   christmasDay: any;
+  itsChristmasDay = false;
   targetDate = new Date("12/25/2024"); //any year added as needed for the getMonth() and getDate() functions to work
   timeDiff: any;
   days: any;
@@ -23,6 +26,14 @@ export class AppComponent {
     "<h3 class='scriptVer'>For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counseller, The mighty God, The everlasting Father, The Prince of Peace.</h3><h4 class='scriptNum'>Isaiah 9:6</h4>",
     "<h3 class='scriptVer'>Therefore the Lord himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel.</h3><h4 class='scriptNum'>Isaiah 7:14</h4>",
     "<h3 class='scriptVer'>Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, God with us.</h3><h4 class='scriptNum'>Matthew 1:23</h4>",
+    "<h3 class='scriptVer'>But thou, Beth-lehem Ephratah, though thou be little among the thousands of Judah, yet out of thee shall he come forth unto me that is to be ruler in Israel; whose goings forth have been from of old, from everlasting.</h3><h4 class='scriptNum'>Micah 5:2</h4>",
+    "<h3 class='scriptVer'>For unto you is born this day in the city of David a Saviour, which is Christ the Lord.</h3><h4 class='scriptNum'>Luke 2:11</h4>",
+    "<h3 class='scriptVer'>And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth.</h3><h4 class='scriptNum'>John 1:14</h4>",
+    "<h3 class='scriptVer'>And the angel said unto them, Fear not: for, behold, I bring you good tidings of great joy, which shall be to all people.</h3><h4 class='scriptNum'>Luke 2:10</h4>",
+    "<h3 class='scriptVer'>Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning.</h3><h4 class='scriptNum'>James 1:17</h4>",
+    // "<h3 class='scriptVer'></h3><h4 class='scriptNum'></h4>",
+    // "<h3 class='scriptVer'></h3><h4 class='scriptNum'></h4>",
+    // "<h3 class='scriptVer'></h3><h4 class='scriptNum'></h4>",
   ]
   chosenVer?: string;
 
@@ -32,15 +43,17 @@ export class AppComponent {
     const ind: number = Math.floor(Math.random() * this.verses.length);
     this.chosenVer = this.verses[ind];
 
-    this.timeYearXmas()
+    this.timeYearXmas();
+    this.timeDifference();
   }
   ngAfterViewInit(){
     setInterval(()=>{this.timeDifference();
-      // console.log(this.time.seconds)
     }, 1000)
   }
   timeDifference(){
     this.time = new Date();
+    // this.time = new Date("12/25/2024"); // for testing and change in variables above
+
     this.timeDiff = this.christmasDay.getTime() - this.time.getTime();
     this.days = Math.floor(this.timeDiff/86400000); // convert milliseconds to days:- 1000 * 60 * 60 * 24 = 86400000)
     this.hours = Math.floor((this.timeDiff%86400000)/3600000);  //convert milliseconds to hours left in day:- (time_difference%(1000 * 60 * 60 * 24))/(1000 * 60 * 60) 
@@ -48,9 +61,13 @@ export class AppComponent {
     this.seconds = Math.floor((this.timeDiff%(1000 * 60))/(1000));  //convert milliseconds to seconds left in hour:- (time_difference%(1000 * 60))/(1000 * 60 )
   }
   timeYearXmas(){
-    if ((this.targetDate.getMonth() > this.time.getMonth()) && (this.targetDate.getDate() >= this.time.getDate())) {
+    if ((this.targetDate.getMonth() > this.time.getMonth()) && (this.targetDate.getDate() > this.time.getDate())) {
       const date = "12/25/" + this.time.getFullYear();
       this.christmasDay = new Date(date)
+    } else if ((this.targetDate.getMonth() == this.time.getMonth()) && (this.targetDate.getDate() == this.time.getDate())) {
+      const date = "12/25/" + this.time.getFullYear(); // stop errors this is not needed
+      this.christmasDay = new Date(date) // stop errors not needed
+      this.itsChristmasDay = true;
     } else {
       const date = "12/25/" + (this.time.getFullYear() + 1);
       this.christmasDay = new Date(date)
@@ -61,24 +78,24 @@ export class AppComponent {
 // Snow effect below
 
   export interface SnowFlake {
-    /** The current x position. */
+    /* The current x position. */
     x: number;
-    /** The current y position. */
+    /* The current y position. */
     y: number;
-    /** The radius in pixels. */
+    /* The radius in pixels. */
     radius: number;
-    /** A pixel value to add to y movement to speed/slow itself. */
+    /* A pixel value to add to y movement to speed/slow itself. */
     drop: number;
-    /** A pixel value to add to x movement to speed/slow itself. */
+    /* A pixel value to add to x movement to speed/slow itself. */
     sway: number;
   }
   
-  /** Helper function returning a random decimal between min and max. */
+  /* Helper function returning a random decimal between min and max. */
   function random(min: number, max: number) {
     return Math.random() * (max - min) + min;
   }
   
-  /** Helper functions to generate a random int inclusive of min and max. */
+  /* Helper functions to generate a random int inclusive of min and max. */
   function randomInt(min: number, max: number) {
     return (Math.floor(Math.random() * (max - min + 1)) + min);
   }
@@ -115,21 +132,21 @@ export class AppComponent {
     });
   }
   
-  // Setup and draw our flakes.
+  // Setup and draw flakes.
   const ctx = canvas.getContext('2d')!;
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = 'rgba(255,255,255,0.66)';
     ctx.beginPath();
     flakes.forEach((flake) => {
-      // Draw our flake at its current x/y
+      // Draw flake at its current x/y
       ctx.moveTo(flake.x, flake.y);
       ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
   
-      // Update our flake's next x/y.
+      // Update flake's next x/y.
       flake.y += 1 + flake.drop;
       flake.x += flake.sway;
-      // If our snowflake goes off the left, right or bottom,
+      // If snowflake goes off the left, right or bottom,
       // move it to the opposite side.
       if (flake.x > canvas.width) {
         flake.x = 0;
@@ -142,11 +159,11 @@ export class AppComponent {
     });
     ctx.fill();
   
-    // Repeat!
+    // Repeat
     window.requestAnimationFrame(draw);
   }
   
-  // Kick it off.
+  // Start it.
   window.requestAnimationFrame(draw);
 
 

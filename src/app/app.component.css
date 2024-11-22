@@ -1,14 +1,12 @@
 .page {
-    width: 100%;
-    min-height: 100dvh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: linear-gradient(skyblue 60%, #eee);
+    max-width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    background: linear-gradient(skyblue 60%, #eee, #fff);
     background-size: cover;
+    text-align: center;
 }
 .countdown {
-    position: relative;
     z-index: 1;
     font-size: 1.2rem;
     max-width: 700px;
@@ -17,17 +15,19 @@
     text-align: center;
     color: black;
     text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white;
-    min-height: 100dvh;
-    height: fit-content;
-    width: 100%;
     overflow-x: hidden;
+    @media (orientation: portrait) {   
+        min-height: 33vh; /*evenly space all 3 sections*/     
+    }
+
 }
-.countdown h1, h2, h3, h4, h5 {
+.countdown h2 {
     margin: 1rem;
 }
 .heading {
     color: green;
     display:inline-block;
+    text-shadow: 0 0 2px red, 0 0 2px red, 0 0 2px red, 0 0 2px red;
     mask:linear-gradient(-60deg,#a00 30%,#a005,#a00 70%) right/300% 100%;
     background-repeat: no-repeat;
     animation: shimmer 3s infinite;
@@ -35,18 +35,37 @@
 @keyframes shimmer {
 100% {mask-position:left}
 }
-
+.christmasDay {
+    min-height: 33vh; /*evenly space all 3 sections*/     
+    display: grid;
+    align-items: center;
+    font-size: 3rem;
+    margin: 0;
+    color: red;
+    text-shadow: 0 0 5px green, 0 0 5px green, 0 0 5px green, 0 0 5px green;
+    mask:linear-gradient(-60deg,#a00 30%,#a005,#a00 70%) right/300% 100%;
+    background-repeat: no-repeat;
+    animation: shimmer 3s infinite;
+}
+.countdownGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.countdownGrid h3, h4 {
+    margin: 0;
+}
 .tree {
-    position: absolute;
-    top: 40%;
-    left: 0;
-    right: 0;
-    margin: auto;
+    margin: 0 auto;
     height: 30dvh;
+    @media (orientation: portrait) {   
+        min-height: 33vh; /*evenly space all 3 sections*/     
+    }
 }
 .scripture {
-    position: absolute;
-    bottom: 2rem;
+    position: relative; /*Needed for z-index to work; keep scripture above snow*/
+    display: grid;
+    grid-template-rows: auto 3rem;
+    align-items: end;
     z-index: 3;
     margin: 0 1rem;
 }
