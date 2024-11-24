@@ -13,7 +13,6 @@ export class AppComponent {
 
   christmasDay: any;
   itsChristmasDay = false;
-  targetDate = new Date("12/25/2024"); //any year added as needed for the getMonth() and getDate() functions to work
   timeDiff: any;
   days: any;
   hours: any;
@@ -61,16 +60,21 @@ export class AppComponent {
     this.seconds = Math.floor((this.timeDiff%(1000 * 60))/(1000));  //convert milliseconds to seconds left in hour:- (time_difference%(1000 * 60))/(1000 * 60 )
   }
   timeYearXmas(){
-    if ((this.targetDate.getMonth() > this.time.getMonth()) && (this.targetDate.getDate() > this.time.getDate())) {
+
+    // javascript 'date' is broken; months 0 - 11, days 1 - 31
+    if ((Number(this.time.getMonth()) < 11) || ((Number(this.time.getMonth()) == 11) && (Number(this.time.getDate()) < 25))) {
       const date = "12/25/" + this.time.getFullYear();
-      this.christmasDay = new Date(date)
-    } else if ((this.targetDate.getMonth() == this.time.getMonth()) && (this.targetDate.getDate() == this.time.getDate())) {
-      const date = "12/25/" + this.time.getFullYear(); // stop errors this is not needed
-      this.christmasDay = new Date(date) // stop errors not needed
+      this.christmasDay = new Date(date);
+      // console.log(this.itsChristmasDay, this.time.getDate(), this.time.getMonth())
+      
+    // javascript 'date' is broken; months 0 - 11, days 1 - 31
+
+    } else if ((Number(this.time.getMonth()) == 11) && (Number(this.time.getDate()) == 25)) {
+      this.christmasDay = this.time // stop errors not needed
       this.itsChristmasDay = true;
     } else {
       const date = "12/25/" + (this.time.getFullYear() + 1);
-      this.christmasDay = new Date(date)
+      this.christmasDay = new Date(date);
     }
   }
 }  
